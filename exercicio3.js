@@ -147,7 +147,6 @@ let var2 = 25
 let var3 = var1
 var1 = var2
 var2 = var3
-// Aqui faremos uma lógica para trocar os valores
 
 
 // Depois de trocados, teremos o seguinte resultado:
