@@ -144,11 +144,11 @@ Ou seja, no caso desse exemplo acima, var1 passaria a ser 25 e var2 passaria a s
 let var1 = 10
 let var2 = 25
 
+//Aqui faremos uma lógica para trocar os valores
+
 let var3 = var1
 var1 = var2
 var2 = var3
-
-//Aqui faremos uma lógica para trocar os valores
 
 // Depois de trocados, teremos o seguinte resultado:
 console.log("O novo valor de var1 eh", var1) // O novo valor de var1 é 25
