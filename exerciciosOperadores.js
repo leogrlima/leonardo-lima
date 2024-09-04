@@ -305,8 +305,9 @@ console.log(Number(booleano))
 // Em seguida, crie uma variável que armazene a quantidade de caracteres desse nome.
 // Exiba a quantidade de caracteres no console.
 const nomeCompleto = "Leonardo da Graça Lima"
+let caracteres = nomeCompleto.length
 
-console.log(nomeCompleto.length)
+console.log(caracteres)
 
 
 
