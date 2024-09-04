@@ -318,4 +318,4 @@ console.log(caracteres)
 let var4 = 17
 let var5 = 16
 
-console.log((var4 - var5) >= 0)
+console.log((var4 - var5) < 0)
