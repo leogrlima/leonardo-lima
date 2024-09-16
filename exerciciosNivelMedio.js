@@ -102,7 +102,11 @@ console.log(nome.length)
 let naves = ["X-Wing", "TIE Fighter", "Millennium Falcon"]
 naves.pop()
 naves.unshift("Star Destroyer")
-console.log(naves.includes("TIE Fighter"))
+if(naves.includes("TIE Fighter")){
+    console.log("TIE Fighter está incluso no array")
+} else {
+    console.log("TIE Fighter não está incluso no array")
+}
 
 /*8.
 Você foi contratado pela WOOHP para criar um sistema de planejamento de missões. Para cada missão, os detalhes incluem o nome da espiã, o tipo de missão (RE para resgate, IN para infiltração, DE para desativação) e o nível de risco da missão (AL para alto, ME para médio, BA para baixo). Dependendo da combinação do tipo de missão e do nível de risco, o sistema deve determinar o tempo estimado de conclusão e a quantidade de gadgets necessários:
