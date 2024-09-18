@@ -2,15 +2,15 @@ const ask = require("readline-sync")
 let resultado
 let rodando = true
 
-console.log("\nInstruções: Os sinais de operação são:\n + ou Soma\n - ou Subtracao\n * ou Multiplicacao\n / ou Divisao\n % ou Mod. \nApós terminar de calcular, responda a última pergunta para parar ou calcular novamente. \n")
-
 while(rodando) {
+
+    console.log("\nInstruções: Os sinais de operação são:\n + ou Soma\n - ou Subtracao\n * ou Multiplicacao\n / ou Divisao\n % ou Mod\n ^ ou Potencia\n # ou Raiz\nApós terminar de calcular, responda a última pergunta para parar ou calcular novamente. \n")
 
     let numero1 = Number(ask.question("Digite o primeiro numero "))
     let operacao = ask.question("Digite a operacao ")
     let numero2 = Number(ask.question("Digite o segundo numero "))
 
-    console.log("Operacao:", numero1, operacao, numero2)
+    console.log("Operação:", numero1, operacao, numero2)
 
     switch(operacao.toLowerCase()) {
         case "soma":
@@ -23,34 +23,54 @@ while(rodando) {
             break
         case "multiplicacao":
         case "*":
+        case "x":
             resultado = numero1 * numero2
             break
         case "divisao":
         case "/":
             resultado = numero1 / numero2
+            if (resultado == Infinity) {
+                resultado = "Esta operação não existe. Motivo = Divisão por 0"
+            }
             break
+        case "modulo":    
         case "mod":
         case "%":
             resultado = numero1 % numero2
             break
+        case "potencia":
+        case "^":
+            resultado = numero1 ** numero2
+            break
+        case "raiz":
+        case "#":
+            resultado = Math.pow(numero1, 1/numero2);
+            break
         default:
-            resultado = "Esta operação não existe."
+            resultado = "Esta operação não existe. Motivo: Operador inválido"
+            break
     }
 
-    if (numero1.toString() == "NaN") {
-        resultado = "Esta operação não existe."
+    if (numero1.toString() == "NaN" && typeof resultado == "string") {
+        resultado = resultado.replace("inválido", "e número inválido")
+    } else if (numero1.toString() == "NaN") {
+        resultado = "Esta operação não existe. Motivo: Número inválido"
     }
 
-    console.log("Resultado:", resultado)
+    switch(typeof resultado) {
+        case "string":
+            console.log("Resultado:", resultado)
+            break
+        default:
+            console.log("Resultado:", Number(resultado.toFixed(2).toString()))
+            break    
+    }
 
     let continuar = ask.question("Deseja calcular mais numeros? sim/nao: ")
 
     switch(continuar.toLowerCase()) {
         case "sim":
             rodando = true
-            break
-        case "nao":
-            rodando = false
             break
         default:
             rodando = false
