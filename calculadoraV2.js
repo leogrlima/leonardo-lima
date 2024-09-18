@@ -6,7 +6,7 @@ while(rodando) {
 
     /* Instruções: Forme uma operação digitando um número, a operação e outro número.
     Sinais de operação: (1) + ou Soma (2) - ou Subtracao (3) * ou Multiplicacao (4) / ou Divisao (5) % ou Mod (6) ^ ou Potencia (7) # ou Raiz 
-    Após terminar de calcular, responda a última pergunta para parar ou calcular novamente.\n") */
+    Após terminar de calcular, responda a última pergunta para parar ou calcular novamente. */
 
     console.clear()
     let numero1 = Number(ask.question("Digite o primeiro numero: "))
