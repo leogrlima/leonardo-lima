@@ -4,52 +4,68 @@ let rodando = true
 
 while(rodando) {
 
-    console.log("\nInstruções: Os sinais de operação são:\n + ou Soma\n - ou Subtracao\n * ou Multiplicacao\n / ou Divisao\n % ou Mod\n ^ ou Potencia\n # ou Raiz\nApós terminar de calcular, responda a última pergunta para parar ou calcular novamente. \n")
+    /*console.log("\nInstruções:\n\nForme uma operação digitando um número, a operação e outro número.\n\nSinais de operação:\n (1) + ou Soma\n (2) - ou Subtracao\n (3) * ou Multiplicacao\n (4) / ou Divisao\n (5) % ou Mod\n (6) ^ ou Potencia\n (7) # ou Raiz\n\nApós terminar de calcular, responda a última pergunta para parar ou calcular novamente.\n")*/
 
-    let numero1 = Number(ask.question("Digite o primeiro numero "))
-    let operacao = ask.question("Digite a operacao ")
-    let numero2 = Number(ask.question("Digite o segundo numero "))
-
-    console.log("Operação:", numero1, operacao, numero2)
+    console.clear()
+    let numero1 = Number(ask.question("Digite o primeiro numero: "))
+    console.log(" Operações:\n (1) + Soma\n (2) - Sub\n (3) * Multi\n (4) / Div\n (5) % Mod\n (6) ^ Pot\n (7) # Raiz")
+    let operacao = ask.question("Digite a operacao: ")
+    let numero2 = Number(ask.question("Digite o segundo numero: "))
 
     switch(operacao.toLowerCase()) {
+        case "1":
         case "soma":
         case "+":
             resultado = numero1 + numero2
+            operacao = "+"
             break
-        case "subtracao":
+        case "2":
+        case "sub":
         case "-":
             resultado = numero1 - numero2
+            operacao = "-"
             break
-        case "multiplicacao":
+        case "3":
+        case "multi":
         case "*":
         case "x":
             resultado = numero1 * numero2
+            operacao = "*"
             break
-        case "divisao":
+        case "4":
+        case "div":
         case "/":
             resultado = numero1 / numero2
             if (resultado ==  0 || resultado ==  Infinity) {
                 resultado = "Esta operação não existe. Motivo = Divisão por 0"
             }
+            operacao = "/"
             break
-        case "modulo":    
+        case "5":
         case "mod":
         case "%":
             resultado = numero1 % numero2
+            operacao = "%"
             break
-        case "potencia":
+        case "6":
+        case "pot":
         case "^":
             resultado = numero1 ** numero2
+            operacao = "^"
             break
+        case "7":
         case "raiz":
         case "#":
             resultado = Math.pow(numero1, 1/numero2);
+            operacao = "#"
             break
         default:
             resultado = "Esta operação não existe. Motivo: Operador inválido"
             break
     }
+
+    console.clear()
+    console.log("Operação:", numero1, operacao, numero2)
 
     if (numero1.toString() == "NaN" && typeof resultado == "string") {
         resultado = resultado.replace("inválido", "e número inválido")
@@ -66,7 +82,7 @@ while(rodando) {
             break    
     }
 
-    let continuar = ask.question("Deseja calcular mais numeros? sim/nao: ")
+    let continuar = ask.question("Deseja continuar? sim/nao: ")
 
     switch(continuar.toLowerCase()) {
         case "sim":
@@ -76,4 +92,6 @@ while(rodando) {
             rodando = false
             break
     }
+
+    console.clear()
 }
