@@ -29,7 +29,7 @@ while(rodando) {
         case "divisao":
         case "/":
             resultado = numero1 / numero2
-            if (resultado == Infinity) {
+            if (resultado ==  0 || resultado ==  Infinity) {
                 resultado = "Esta operação não existe. Motivo = Divisão por 0"
             }
             break
