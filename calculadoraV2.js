@@ -4,7 +4,9 @@ let rodando = true
 
 while(rodando) {
 
-    /*console.log("\nInstruções:\n\nForme uma operação digitando um número, a operação e outro número.\n\nSinais de operação:\n (1) + ou Soma\n (2) - ou Subtracao\n (3) * ou Multiplicacao\n (4) / ou Divisao\n (5) % ou Mod\n (6) ^ ou Potencia\n (7) # ou Raiz\n\nApós terminar de calcular, responda a última pergunta para parar ou calcular novamente.\n")*/
+    /* Instruções: Forme uma operação digitando um número, a operação e outro número.
+    Sinais de operação: (1) + ou Soma (2) - ou Subtracao (3) * ou Multiplicacao (4) / ou Divisao (5) % ou Mod (6) ^ ou Potencia (7) # ou Raiz 
+    Após terminar de calcular, responda a última pergunta para parar ou calcular novamente.\n") */
 
     console.clear()
     let numero1 = Number(ask.question("Digite o primeiro numero: "))
