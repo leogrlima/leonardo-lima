@@ -34,7 +34,7 @@ let valor = 0
 for(let i = 0; i < 5; i++) {
   valor += i
 }
-console.log(valor) // 1 1 // 2 3 // 3 6 // 4 10 
+console.log(valor) // 4 10 
 // O código está repetindo um loop for 4 vezes, adicionando 1 na variável "i" e após isso "i" + "valor" para a variável "valor".
 
 
