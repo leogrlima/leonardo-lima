@@ -154,7 +154,7 @@ for(let item of arrayOriginal){
 console.log(novoArray1)
 
 for(let i of arrayOriginal){
-    let novoArray = `O elemento do índex ${i} é: ${arrayOriginal.indexOf(i)}`
+    let novoArray = `O elemento do índex ${arrayOriginal.indexOf(i)} é: ${arrayOriginal[arrayOriginal.indexOf(i)]}`
     console.log(novoArray)
 }
 
@@ -170,7 +170,3 @@ for(let item of arrayOriginal){
 }
 console.log(maiorItem)
 console.log(menorItem)
-
-
-
-
