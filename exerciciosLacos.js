@@ -136,37 +136,53 @@ if (pergunta == 0) {
 
 let arrayOriginal = [1, 2, 3]
 
-for(let item of arrayOriginal){
-    console.log(item)
-}
-
-for(let item of arrayOriginal){
-    console.log(item/10)
-}
-
-let novoArray1 = []
-
-for(let item of arrayOriginal){
-    if (item % 2 == 0) {
-        novoArray1.push(item)
+function A() {
+    for(let item of arrayOriginal){
+        console.log(item)
     }
 }
-console.log(novoArray1)
 
-for(let i of arrayOriginal){
-    let novoArray = `O elemento do índex ${arrayOriginal.indexOf(i)} é: ${arrayOriginal[arrayOriginal.indexOf(i)]}`
-    console.log(novoArray)
-}
-
-let maiorItem = 0
-let menorItem = 0
-for(let item of arrayOriginal){
-    if (item > maiorItem) {
-        maiorItem = item
-    }
-    if (item < menorItem) {
-        menorItem = item
+function B() {
+    for(let item of arrayOriginal){
+        console.log(item/10)
     }
 }
-console.log(maiorItem)
-console.log(menorItem)
+
+function C() {
+    let novoArray1 = []
+
+    for(let item of arrayOriginal){
+        if (item % 2 == 0) {
+            novoArray1.push(item)
+        }
+    }
+    console.log(novoArray1)
+}
+
+function D() {
+    for(let i of arrayOriginal){
+        let novoArray = `O elemento do índex ${arrayOriginal.indexOf(i)} é: ${arrayOriginal[arrayOriginal.indexOf(i)]}`
+        console.log(novoArray)
+    }
+}
+
+function E() {
+    let maiorItem = 0
+    let menorItem = 0
+    for(let item of arrayOriginal){
+       if (item > maiorItem) {
+            maiorItem = item
+        }
+        if (item < menorItem) {
+            menorItem = item
+        }
+    }
+    console.log(maiorItem)
+    console.log(menorItem)
+}
+
+A()
+B()
+C()
+D()
+E()
