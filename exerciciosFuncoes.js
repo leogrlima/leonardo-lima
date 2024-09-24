@@ -139,10 +139,10 @@ console.log(informacoesPessoa("Rogério", 25, "Novo Hamburgo", "Engenheiro"))
 */
 
 function soma(num1, num2) {
-    console.log(num1 + num2)
+    return num1 + num2
 }
 
-soma(4, 10)
+console.log(soma(4, 10))
 
 function maiorIgual(num1, num2) {
     return num1 >= num2
@@ -154,7 +154,7 @@ function par(num) {
     return num % 2 == 0
 }
 
-par(3)
+console.log(par(3))
 
 function mensagemString(mensagem) {
     console.log(mensagem.length, mensagem.toUpperCase())
@@ -188,6 +188,6 @@ function divisao(num1, num2) {
 }
 
 let numero1 = Number(ask.question("Insira um numero: "))
-let numero2 = Number(ask.question("Insira um segundo numero: "))
+let numero2 = Number(ask.question("Insira o segundo numero: "))
 
 console.log(`Números inseridos: ${numero1} e ${numero2}\nSoma: ${soma(numero1, numero2)}\nSubtração: ${subtracao(numero1, numero2)}\nMultiplicação: ${multiplicacao(numero1, numero2)}\nDivisão: ${divisao(numero1, numero2).toFixed(2)}`)
