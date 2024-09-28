@@ -5,18 +5,22 @@ let programaAtivo = true
 let opcaoUsuario
 
 function introducao() {
+    console.clear()
     console.log(`
 Bem vindo a vila!
 Como deseja prosseguir?
     
-[1] - Investigar o ladrão
-[2] - Cadastrar novo morador
-[3] - Visualizar moradores 
-[4] - Adicionar objeto
+[1] - Cadastrar novo morador
+[2] - Adicionar objeto
+[3] - Investigar o ladrão 
+[4] - Visualizar moradores
 [5] - Visualizar objetos
 [0] - Sair
         `)
-    opcaoUsuario = Number(ask.question("-----> "))
+    opcaoUsuario = ask.question("-----> ")
+    if (opcaoUsuario != "") {
+        opcaoUsuario = Number(opcaoUsuario)
+    }
 }
 
 function cadastrarMorador() {
@@ -24,7 +28,8 @@ function cadastrarMorador() {
     let nomeMorador = ask.question("Digite o nome do morador: ")
     let nomePersonagem = {
         nome: nomeMorador,
-        ladrao: false
+        ladrao: false,
+        objetoRoubado: null
     }
     moradores.push(nomePersonagem)
     console.log(`Morador ${nomeMorador} adicionado!`)
@@ -48,16 +53,14 @@ function escolherLadrao() {
         let objetoAleatorio = Math.floor(Math.random() * objetos.length)
         moradores[moradorAleatorio].ladrao = true
         moradores[moradorAleatorio].objetoRoubado = objetos[objetoAleatorio]
-    } else {
-        //console.log("Não há moradores ou objetos suficientes! Senhor Barriga expulsou geral :(")
     }
 }
 
 function investigarLadrao(){
-    let culpado = null
+    let culpado = undefined
     for(let suspeito of moradores) {
         if(suspeito.ladrao){
-            culpado = suspeito.nome
+            culpado = suspeito
         }
     }
     return culpado
@@ -65,14 +68,20 @@ function investigarLadrao(){
 
 function visualizarMoradores() {
     console.clear()
+    console.log("Lista de Moradores:")
     for(let morador of moradores) {
         console.log(morador.nome)
     }
+    console.log("_______________")
 }
 
 function visualizarObjetos() {
     console.clear()
-    console.log(objetos)
+    console.log("Lista de Objetos:")
+    for(let objeto of objetos) {
+        console.log(objeto)
+    }
+    console.log("_______________")
 }
 
 while(programaAtivo) {
@@ -81,22 +90,22 @@ while(programaAtivo) {
 
     switch(opcaoUsuario) {
         case 1:
-            escolherLadrao()
-            let culpado = investigarLadrao()
-            if (typeof culpado == "string") {
-                console.log(`O morador ${culpado} roubou ${moradores[culpado].objetoRoubado}!`)
-            } else {
-                console.log("Não há ladrões!")
-            }
-            break
-        case 2:
             cadastrarMorador()
             break
+        case 2:
+            cadastrarObjeto()
+            break
         case 3:
-            visualizarMoradores()
+            escolherLadrao()
+            let culpado = investigarLadrao()
+            if (typeof culpado != "undefined") {
+                console.log(`O morador ${culpado.nome} roubou ${culpado.objetoRoubado}!`)
+            } else {
+                console.log("Não há moradores ou objetos suficientes!")
+            }
             break
         case 4:
-            cadastrarObjeto()
+            visualizarMoradores()
             break
         case 5:
             visualizarObjetos()
