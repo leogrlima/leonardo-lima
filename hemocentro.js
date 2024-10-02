@@ -172,7 +172,7 @@ function buscarDoadorUltimaDoacao() {
     let ultimaDoacao = ask.question(cor("roxo", "Digite a data desejada (dd/mm/aaaa): "))
     let data = ultimaDoacao.split("/")
     
-    if (!ultimaDoacao.includes("/") || !data[2] || (Number(data[0]) > 31 || Number(data[1]) > 12)) {
+    if (!ultimaDoacao.includes("/") || !data[2] || Number(data[0]) > 31 || 0 > Number(data[0]) || Number(data[1]) > 12 || 0 > Number(data[1])) {
         console.log(cor("vermelho", "Data inválida."))
         return
     }
