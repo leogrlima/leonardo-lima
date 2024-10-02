@@ -87,15 +87,16 @@ function cadastrarDoador() {
 function listarDoadores() {
     console.clear()
 
-    console.log(cor("roxo", `        _______________
-    ()==(              (@==()
-         '______________'|
-           |             |
-           |             |
-         __)_____________|
-    ()==(               (@==()
-         '--------------'
-         `))
+    console.log(cor("roxo", `
+    _______________
+()==(              (@==()
+     '______________'|
+       |             |
+       |             |
+     __)_____________|
+()==(               (@==()
+     '--------------'
+    `))
     console.log(cor("azul", `--------------------
 LISTAGEM DE DOADORES:
 --------------------
@@ -112,19 +113,19 @@ NOME             | IDADE | PESO | TIPO SANGUÍNEO | ÚLTIMA DOAÇÃO
 function buscarDoadorTipoSanguineo() {
     console.clear()
 
-    console.log(cor("vermelho", `         ▓▓      
-        ▓▓▓▓      
-        ▓▓▓▓      
-      ▓▓▓▓▓▓▓▓    
-      ▓▓▓▓▓▓▓▓    
-    ██████▓▓▓▓▓▓  
-  ████████▓▓▓▓▓▓▓▓
-  ▓▓████▓▓▓▓▓▓▓▓▒▒
-  ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒
-  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒
-    ▓▓▓▓▓▓▒▒▒▒▒▒  
-      ▓▓▒▒▒▒▒▒  
-      `))
+    console.log(cor("vermelho", `       ▓▓      
+      ▓▓▓▓      
+      ▓▓▓▓      
+    ▓▓▓▓▓▓▓▓    
+    ▓▓▓▓▓▓▓▓    
+  ██████▓▓▓▓▓▓  
+████████▓▓▓▓▓▓▓▓
+▓▓████▓▓▓▓▓▓▓▓▒▒
+▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒
+▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒
+  ▓▓▓▓▓▓▒▒▒▒▒▒  
+    ▓▓▒▒▒▒▒▒  
+    `))
 
     let tipoSanguineo = ask.question(cor("roxo", "Digite o tipo sanguineo desejado: ")).toUpperCase()
     let totalEncontrado = 0
